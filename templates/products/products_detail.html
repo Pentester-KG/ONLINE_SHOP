@@ -1,0 +1,30 @@
+{% include 'header.html'%}
+<br>
+<center>
+
+    
+<img src="{{ laptop.image.url }}" class="img-thumbnail" alt="" width="300">
+<br>
+    <br>
+<div class="card" style="width: 40rem;">
+  <div class="card-header">
+    <h1>{{ laptop.name }}</h1>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><b>Цена: {{ laptop.price }}₽</b> </li>
+    
+  </ul>
+    
+</div>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<a class="btn btn-primary" href="/products" role="button">Вернуться назад</a>
+
+</center>
+<br>
+{% include 'footer.html'%}
