@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% include 'header.html' %}
 
-</body>
-</html>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h1>О Магазине CyberMarker</h1>
+        </div>
+        <div class="card-body">
+            <p>{{ description|linebreaks }}</p>
+        </div>
+    </div>
+    <br>
+    <a class="btn btn-primary" href="/" role="button">Вернуться назад</a>
+</div>
+
+{% include 'footer.html' %}

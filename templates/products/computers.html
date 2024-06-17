@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+{% include 'header.html' %}
 <body>
+<center>
+<ol>
+    {% for i in pc %}
+        <li>
+            <div class="card" style="width: 18rem;">
+                <img src="{{ i.image.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">{{ i.name }}</h5>
+                    <p>{{ i.price }}₽</p>
+                        <a class="btn btn-primary" href="/computers/{{ i.id }}" role="button">Подробнее</a>
 
-</body>
-</html>
+                     {% for j in i.category.all %}
+                        <p>#{{ j.name }}</p>
+                         
+                     {% endfor %}
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+</ol>
+</center>
+
+{% include 'footer.html' %}

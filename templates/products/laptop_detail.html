@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% include 'header.html' %}
+<br>
+<center>
+    <img src="{{ laptops_detail.image.url }}" class="img-thumbnail" alt="" width="300">
+    <br>
+    <br>
+    <div class="card" style="width: 40rem;">
+        <div class="card-header">
+            <h1>{{ laptops_detail.name }}</h1>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Цена: {{ laptops_detail.price }}₽</b> </li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <a class="btn btn-primary" href="/laptops" role="button">Вернуться назад</a>
+</center>
+<br>
+{% include 'footer.html' %}

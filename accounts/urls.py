@@ -1,6 +1,8 @@
 from django.urls import path
 from .views import register, CustomLoginView, profile, AuthLogoutView, cart_detail, add_to_cart
 
+
+
 urlpatterns = [
     path('register/', register, name='register'),
     path('login/', CustomLoginView.as_view(), name='login'),

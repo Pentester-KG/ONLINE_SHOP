@@ -1,0 +1,25 @@
+{% include 'header.html' %}
+<body>
+<center>
+<ol>
+    {% for i in laptops %}
+        <li>
+            <div class="card" style="width: 18rem;">
+                <img src="{{ i.image.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">{{ i.name }}</h5>
+                    <p>{{ i.price }}₽</p>
+                        <a class="btn btn-primary" href="/laptops/{{ i.id }}" role="button">Подробнее</a>
+
+                     {% for j in i.category.all %}
+                        <p>#{{ j.name }}</p>
+                         
+                     {% endfor %}
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+</ol>
+</center>
+
+{% include 'footer.html' %}

@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!-- shop/templates/shop/cart_detail.html -->
 
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+  <div class="container mt-4">
+    <h2>Ваша корзина</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Товар</th>
+          <th>Количество</th>
+          <th>Цена</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart.items.all %}
+          <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ item.product.price }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url 'cart_detail' %}" class="btn btn-primary">Продолжить покупки</a>
+  </div>
+{% endblock %}
